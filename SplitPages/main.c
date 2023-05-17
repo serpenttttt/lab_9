@@ -12,7 +12,8 @@ int main(int argc, char **argv) {
 
     file = fopen("file.txt", "r");
 
-    for (int page_number = 1; page_number <= length; ++page_number) {
+    int page_number = 1;
+    do {
         printf(" -- Page %d --\n", page_number);
         buffer_string = current_string;
         current_string = 0;
@@ -30,5 +31,7 @@ int main(int argc, char **argv) {
             putchar('\n');
             current_string += 1;
         }
-    }
+        ++page_number;
+
+    } while (c != EOF);
 }
